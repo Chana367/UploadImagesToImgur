@@ -62,9 +62,9 @@ async function main() {
             { header: 'URL', key:'url', width: 60},
             { header: 'Estado', key:'estado', width: 60}
         ]
-        for (const data of jsonData) {
+        for (const data of jsonData.data) {
             for (const img of images) {
-                if (data.nombre === img) {
+                if (data.img === img) {
                     const imagePath = path.join(folderPath, img);
                     const imageUrl = await uploadImageImgur(imagePath);
                     if (imageUrl) {
